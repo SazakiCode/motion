@@ -100,6 +100,30 @@
   .p7{ top:10px; left:-420px; animation-delay:4.0s,0.2s; }
   .p8{ top:-60px; left:400px; animation-delay:4.1s,0.5s; }
 
+  /* ===== telas / mockups de site flutuantes com efeito de desfoque (reutilizável) ===== */
+  .screen-float{ position:absolute; width:190px; height:126px; border-radius:12px; background:#101215;
+    border:1px solid var(--line); box-shadow:0 30px 60px -14px rgba(0,0,0,0.55); overflow:hidden;
+    opacity:0; filter:blur(24px); transform:scale(0.8);
+    animation: screenBlurIn 0.9s var(--ease-out) forwards, screenFloat 4.2s ease-in-out infinite; }
+  .screen-float .sf-bar{ display:flex; gap:5px; align-items:center; padding:9px 12px; border-bottom:1px solid var(--line); }
+  .screen-float .sf-bar span{ width:6px; height:6px; border-radius:50%; background:var(--line); }
+  .screen-float .sf-bar .sf-url{ margin-left:8px; flex:1; height:9px; border-radius:3px; background:#181B1F; }
+  .screen-float .sf-body{ padding:11px 12px; display:flex; flex-direction:column; gap:8px; }
+  .screen-float .sf-line{ height:8px; border-radius:3px; background:var(--line); }
+  .screen-float .sf-line.w1{ width:70%; background:var(--teal); opacity:0.55; }
+  .screen-float .sf-line.w2{ width:92%; }
+  .screen-float .sf-line.w3{ width:50%; }
+  .screen-float .sf-grid{ display:flex; gap:6px; margin-top:1px; }
+  .screen-float .sf-grid div{ flex:1; height:36px; border-radius:5px; background:#181B1F; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; color:var(--teal); font-size:15px; }
+  @keyframes screenBlurIn{ to{ opacity:1; filter:blur(0px); transform:scale(1); } }
+  @keyframes screenFloat{ 0%,100%{ transform:translateY(0) scale(1); } 50%{ transform:translateY(-10px) scale(1); } }
+
+  .scr-b1{ top:220px; left:-470px; animation-delay:4.1s,0.4s; }
+  .scr-b2{ top:-250px; left:330px; animation-delay:4.4s,0.9s; }
+  .scr-d1{ top:-560px; left:-95px; animation-delay:12.6s,0.3s; }
+  .scr-d2{ top:470px; left:-95px; animation-delay:13.0s,0.8s; }
+
   /* ===== SCENE C — PROBLEMA (7–11s) mask-wipe por linha + ícones ===== */
   .scene-c{ animation: scC 4s var(--ease-soft) 7s forwards; flex-direction:column; gap:30px; }
   @keyframes scC{ 0%{opacity:1;} 100%{opacity:1;} }
@@ -280,6 +304,19 @@
       <div class="particle gold p6"></div>
       <div class="particle icon p7"><svg class="ico"><use href="#ic-devices"/></svg></div>
       <div class="particle gold p8"></div>
+      <div class="screen-float scr-b1">
+        <div class="sf-bar"><span></span><span></span><span></span><div class="sf-url"></div></div>
+        <div class="sf-body">
+          <div class="sf-line w1"></div><div class="sf-line w2"></div><div class="sf-line w3"></div>
+        </div>
+      </div>
+      <div class="screen-float scr-b2">
+        <div class="sf-bar"><span></span><span></span><span></span><div class="sf-url"></div></div>
+        <div class="sf-body">
+          <div class="sf-grid"><div><svg class="ico"><use href="#ic-image"/></svg></div><div><svg class="ico"><use href="#ic-chart"/></svg></div></div>
+          <div class="sf-line w2"></div>
+        </div>
+      </div>
     </div>
     <div class="b-badge"><svg class="ico"><use href="#ic-code"/></svg></div>
     <div class="b-name">CLEAN CODE</div>
@@ -309,6 +346,19 @@
       <div class="chip chip4"><svg class="ico"><use href="#ic-star"/></svg>Experiência profissional</div>
       <div class="resp-row">
         <div class="dev d1"></div><div class="dev d2"></div><div class="dev d3"></div>
+      </div>
+      <div class="screen-float scr-d1">
+        <div class="sf-bar"><span></span><span></span><span></span><div class="sf-url"></div></div>
+        <div class="sf-body">
+          <div class="sf-line w1"></div><div class="sf-line w2"></div><div class="sf-line w3"></div>
+        </div>
+      </div>
+      <div class="screen-float scr-d2">
+        <div class="sf-bar"><span></span><span></span><span></span><div class="sf-url"></div></div>
+        <div class="sf-body">
+          <div class="sf-grid"><div><svg class="ico"><use href="#ic-check"/></svg></div><div><svg class="ico"><use href="#ic-bolt"/></svg></div></div>
+          <div class="sf-line w2"></div>
+        </div>
       </div>
     </div>
     <div class="mock3d">
